@@ -1,0 +1,26 @@
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+#h2 db create : jdbc:h2:~/IdeaProjects/Study/jwt/db/jwt.db
+#server로 사용 : jdbc:h2:tcp://localhost/~/IdeaProjects/Study/jwt/db/jwt.db
+
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/IdeaProjects/Study/jwt/db/jwt.db
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create #create update none
+      #naming:
+        #physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
